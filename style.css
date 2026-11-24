@@ -1,11 +1,477 @@
-body {
-  background-color: rgb(197, 149, 165);
-  min-height: 100vh;
-  font-size: 60px;
-  font-family: sans-serif;
-}
-
-h1{
-font-size: 50px;
+body{
+  margin: 0;
+  background-color: rgb(237, 216, 219);
 
 }
+
+#backgroundcircle {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  top: 155px;
+  left: 150px;
+
+  background: radial-gradient(
+    circle,
+    #edb5b5,
+    #f0eddf);
+  filter: blur(40px);
+  border-radius: 50%;
+}
+
+#bottomline {
+  position: absolute;
+  width: 285px;
+  height: 4px;
+  top: 580px;
+  left: 193px;
+  background: #168b72;
+}
+
+#canvas{
+  position: relative;
+  width: 700px;
+  height: 700px;
+  margin: 30px auto;
+  background-color: #efebdc;
+}
+
+#vase {
+  position: absolute;
+  width: 180px;
+  height: 280px;
+  top: 300px;
+  left: 250px;
+
+  background: linear-gradient(
+    to right,
+    rgba(150, 150, 150, 0.4),
+    rgba(255, 255, 255, 0.1),
+    rgba(170, 170, 170, 0.3));
+
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+  z-index: 3;
+}
+
+#water {
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  bottom: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(166, 216, 216, 0.45),
+    rgba(197, 216, 216, 0.2),
+    rgba(172, 219, 219, 0.45)
+    );
+}
+
+#shine1 {
+  position: absolute;
+  width: 12px;
+  height: 150px;
+  top: 20px;
+  left: 18px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.9),
+    rgba(255,255,255,0)
+  );
+  border-radius: 20px;
+  transform: rotate(-5deg);
+}
+
+#shine2 {
+  position: absolute;
+  width: 7px;
+  height: 70px;
+  top: 45px;
+  right: 15px;
+  background: rgba(255,255,255,0.65);
+  border-radius: 20px;
+  transform: rotate(5deg);
+}
+
+.stem{
+  position: absolute;
+  width: 8px;
+  height: 300px;
+  background: linear-gradient(
+    to right,
+    #006b53,
+    #19ad85,
+    #006b53);
+  border-radius: 50%;
+  transform-origin: bottom center;
+  z-index: 2;
+}
+
+#stem1 {
+  top: 200px;
+  left: 320px;
+  transform: rotate(-20deg);
+}
+
+#stem2{
+  top: 210px;
+  left: 340px;
+  transform: rotate(20deg);
+}
+
+#stem3 {
+  top: 200px;
+  left: 335px;
+  transform: rotate(0deg);
+}
+
+#stem4 {
+  top: 240px;
+  left: 330px;
+  transform: rotate(10deg);
+}
+
+#stem5 {
+  top: 230px;
+  left: 320px;
+  transform: rotate(-5deg);
+}
+
+.curve {
+  position: absolute;
+  width: 100px;
+  height: 190px;
+  border-left: 7px solid #0b775f;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+#curve1 {
+  top: 240px;
+  left: 150px;
+  transform: rotate(140deg);
+}
+
+#curve2 {
+  top: 230px;
+  left: 320px;
+  transform: rotate(10deg);
+}
+
+#curve3 {
+  top: 240px;
+  left: 420px;
+  transform: rotate(40deg);
+}
+
+.leaf {
+  position: absolute;
+  width: 55px;
+  height: 28px;
+  background: linear-gradient(
+    135deg,
+    #006b53,
+    #17ad87);
+  border-radius: 80% 0 80% 0;
+  z-index: 4;
+}
+
+#leaf1 {
+  top: 258px;
+  left: 119px;
+  transform: rotate(-9deg);
+}
+
+#leaf2 {
+  top: 179px;
+  left: 322px;
+  transform: rotate(320deg);
+}
+
+#leaf3 {
+  top: 225px;
+  left: 415px;
+  transform: rotate(-45deg);
+}
+
+#leaf4 {
+  top: 210px;
+  left: 185px;
+  transform: rotate(65deg);
+}
+
+.inside-stem {
+  position: absolute;
+  width: 5px;
+  height: 230px;
+  background: #168d77;
+  opacity: 0.65;
+  z-index: 2;
+}
+
+#inside1 {
+  top: 260px;
+  left: 280px;
+  transform: rotate(-8deg);
+}
+
+#inside2 {
+  top: 240px;
+  left: 350px;
+  transform: rotate(5deg);
+}
+
+#inside3 {
+  top: 260px;
+  left: 380px;
+  transform: rotate(12deg);
+}
+
+
+#flower1 {
+  position: absolute;
+  top: 90px;
+  left: 80px;
+  width: 160px;
+  height: 170px;
+  z-index: 5;
+}
+
+#pinkback {
+  position: absolute;
+  width: 120px;
+  height: 95px;
+  top: 70px;
+  left: -15px;
+  background: linear-gradient(
+    145deg,
+    #f7bfc5,
+    #e56784,
+    #ae294a
+  );
+  border-radius: 55% 45% 55% 45%;
+  transform: rotate(15deg);
+}
+
+#pinkfront {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 0;
+  left: 25px;
+  background: radial-gradient(
+    circle at 60% 40%,
+    #fcd4d3 0%,
+    #f4a6a8 45%,
+    #df8c94 75%,
+    #ae3b59 100%
+  );
+  border-radius: 48% 55% 50% 45%;
+}
+
+
+#pinkfold1 {
+  position: absolute;
+  width: 65px;
+  height: 55px;
+  top: 20px;
+  left: 15px;
+  background: #d85272;
+  border-radius: 50%;
+  transform: rotate(-25deg);
+}
+
+
+#pinkfold2 {
+  position: absolute;
+  width: 55px;
+  height: 45px;
+  top: 35px;
+  left: 30px;
+  background: linear-gradient(
+    130deg,
+    #f68b9e,
+    #ffbdc1
+  );
+  border-radius: 50% 30% 60% 40%;
+  transform: rotate(30deg);
+}
+
+#pinkdetail {
+  position: absolute;
+  width: 45px;
+  height: 25px;
+  top: 18px;
+  left: 48px;
+  background: rgba(255, 222, 221, 0.65);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+  filter: blur(5px);
+}
+
+#flower2 {
+  position: absolute;
+  top: 43px;
+  left: 205px;
+  width: 75px;
+  height: 90px;
+  z-index: 5;
+}
+
+.tulip {
+  position: absolute;
+  width: 45px;
+  height: 60px;
+  border-radius: 60% 60% 50% 50%;
+}
+
+.petal1 {
+  top: 165px;
+  left:50px;
+  background: linear-gradient(
+    135deg,
+    #ffb6bf,
+    #ef5478
+  );
+  transform: rotate(-25deg);
+}
+
+.petal2 {
+  top:165px;
+  left: 70px;
+  background: linear-gradient(
+    135deg,
+    #ffb3bc,
+    #f75a7d,
+    #e63461
+  );
+  clip-path: polygon(
+    50% 0%,
+    100% 45%,
+    90% 100%,
+    10% 100%,
+    0% 45%
+  );
+}
+
+.petal3 {
+  top: 165px;
+  left: 90px;
+  background: linear-gradient(
+    145deg,
+    #f8a3b1,
+    #e84168);
+  transform: rotate(25deg);
+}
+
+
+#flower3 {
+  position: absolute;
+  top: 105px;
+  left: 400px;
+  width: 170px;
+  height: 160px;
+  z-index: 5;
+}
+
+
+#redbase {
+  position: absolute;
+  width: 155px;
+  height: 155px;
+  background: radial-gradient(
+    circle,
+    #ff7188,
+    #f52e55
+  );
+  border-radius: 50%;
+}
+
+/* Pink-red petals */
+.redpetal {
+  position: absolute;
+  width: 32px;
+  height: 75px;
+  background: linear-gradient(
+    #ff9da8,
+    #f23a60
+  );
+  border-radius: 50%;
+}
+
+.rp1 {
+  top: 25px;
+  left: 10px;
+  transform: rotate(-45deg);
+}
+
+.rp2 {
+  top: 50px;
+  left: 15px;
+  transform: rotate(-30deg);
+}
+
+.rp3 {
+  top: 65px;
+  left: 35px;
+  transform: rotate(-15deg);
+}
+
+.rp4 {
+  top: 75px;
+  left: 55px;
+}
+
+.rp5 {
+  top: 75px;
+  left: 80px;
+  transform: rotate(15deg);
+}
+
+.rp6 {
+  top: 60px;
+  left: 105px;
+  transform: rotate(30deg);
+}
+
+.rp7 {
+  top: 30px;
+  left: 120px;
+  transform: rotate(45deg);
+}
+
+.rp8 {
+  top: 10px;
+  left: 85px;
+  transform: rotate(20deg);
+}
+
+/* Flower center */
+#redmiddle {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  top: 25px;
+  left: 70px;
+  background: radial-gradient(
+    circle,
+    #ffb6b8,
+    #f65a78
+  );
+  border-radius: 50%;
+}
+
+/* Small center details */
+.seed {
+  position: absolute;
+  width: 10px;
+  height: 15px;
+  background: #ffb9bd;
+  border-radius: 50%;
+}
+
+.s1 { top: 30px; left: 80px; }
+.s2 { top: 38px; left: 100px; }
+.s3 { top: 50px; left: 85px; }
+.s4 { top: 55px; left: 108px; }
+.s5 { top: 65px; left: 95px; }
